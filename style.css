@@ -19,10 +19,11 @@
 }
 
 .content {
+    position: relative;
     max-width: 500px;
     width: 100%;
     min-height: 100vh;
-    background: radial-gradient(circle at left top,rgba(255, 255, 255, 0.048), #232323);
+    background: radial-gradient(circle at left top,rgba(255, 255, 255, 0.1), #232323);
 
 }
 
@@ -35,8 +36,8 @@ h1 {
     padding-top: 5rem;
     font-size: 4rem;
     line-height: 1.2;
-    text-shadow: 1px 1px black;
     padding-right: 1rem;
+    animation: slideIn 700ms forwards;
 }
 
 h1 > p {
@@ -44,11 +45,20 @@ h1 > p {
     width: fit-content;
     padding-right: 2rem;
     padding-left: 1rem;
+    background: linear-gradient(276.22deg, #00EF43 -3.9%, #0066FF 110.8%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 b {
-    opacity: 0.5;
+    opacity: 0.8;
     padding-left: 1rem;
+
+    background: linear-gradient(262.47deg, #0066FF -22.49%, #00EF43 112.92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     
 }
 
@@ -62,16 +72,17 @@ b {
     gap: 3.5rem;
 }
 
+.info-section {
+    animation: fadeIn 500ms 750ms forwards;
+    opacity: 0;
+}
+
 .info-section > p:first-child {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     opacity: 1;
     border-bottom: 1px solid white;
     margin: 0.5rem;
-    padding: 0 0.5rem;
-}
-
-.info-section > p:first-child:hover {
-    color: #D71920;
+    padding: 0 1rem;
 }
 
 .info-section > * {
@@ -81,7 +92,9 @@ b {
 .links {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem
+    gap: 0.5rem;
+    animation: fadeIn 500ms 1250ms forwards;
+    opacity: 0;
 }
 
 .link {
@@ -95,11 +108,11 @@ b {
     text-decoration: underline;
 }
 
-.email:hover {
+.email {
     color: greenyellow;
 }
 
-.github:hover {
+.github{
     color: #6e5494;
 }
 
@@ -117,8 +130,40 @@ b {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    animation: fadeIn 400ms forwards;
+    opacity: 0;
 }
 
 .tools img {
     max-width: 48px;
+}
+
+.title-hider {
+    top: 5rem;
+    left: -350px;
+    position: absolute;
+    z-index: 100;
+    width: 350px;
+    height: 200px;
+    background-color: #151515;
+}
+
+/*ANIMATIONS*/
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    } to {
+        opacity: 1;
+        transform: none;
+    }
 }
