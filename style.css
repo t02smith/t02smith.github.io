@@ -37,6 +37,7 @@ h1 {
     font-size: 4rem;
     line-height: 1.2;
     padding-right: 1rem;
+    -webkit-animation: slideIn 700ms forwards;
     animation: slideIn 700ms forwards;
 }
 
@@ -45,7 +46,7 @@ h1 > p {
     width: fit-content;
     padding-right: 2rem;
     padding-left: 1rem;
-    background: linear-gradient(276.22deg, #00EF43 -3.9%, #0066FF 110.8%);
+    background: -webkit-linear-gradient(276.22deg, #00EF43 -3.9%, #0066FF 110.8%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -55,7 +56,7 @@ b {
     opacity: 0.8;
     padding-left: 1rem;
 
-    background: linear-gradient(262.47deg, #0066FF -22.49%, #00EF43 112.92%);
+    background: -webkit-linear-gradient(262.47deg, #0066FF -22.49%, #00EF43 112.92%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -73,16 +74,23 @@ b {
 }
 
 .info-section {
+    -webkit-animation: fadeIn 500ms 750ms forwards;
     animation: fadeIn 500ms 750ms forwards;
     opacity: 0;
 }
 
-.info-section > p:first-child {
+.info-section > p:first-child,
+.links > p,
+.tools > p {
+    font-size: 1.4rem;
+}
+
+.info-section > p:nth-child(2) {
     font-size: 1.3rem;
     opacity: 1;
     border-bottom: 1px solid white;
     margin: 0.5rem;
-    padding: 0 1rem;
+    padding: 0 .2rem;
 }
 
 .info-section > * {
@@ -93,6 +101,7 @@ b {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    -webkit-animation: fadeIn 500ms 1250ms forwards;
     animation: fadeIn 500ms 1250ms forwards;
     opacity: 0;
 }
@@ -125,11 +134,18 @@ b {
     padding-bottom: 1rem;
 }
 
+.tools > p {
+    -webkit-animation: fadeIn 400ms 1600ms forwards;
+    animation: fadeIn 400ms 1600ms forwards;
+    opacity: 0;
+}
+
 .tools > div {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    -webkit-animation: fadeIn 400ms forwards;
     animation: fadeIn 400ms forwards;
     opacity: 0;
 }
@@ -152,18 +168,18 @@ b {
 
 @keyframes slideIn {
     from {
-        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
     } to {
-        transform: translateX(0);
+        -webkit-transform: translateX(0);
     }
 }
 
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
     } to {
         opacity: 1;
-        transform: none;
+        -webkit-transform: none;
     }
 }
