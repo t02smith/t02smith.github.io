@@ -21,7 +21,7 @@
 .content {
     max-width: 500px;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     background: radial-gradient(circle at left top,rgba(255, 255, 255, 0.048), #232323);
 
 }
@@ -59,7 +59,7 @@ b {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 4rem;
+    gap: 3.5rem;
 }
 
 .info-section > p:first-child {
@@ -104,11 +104,12 @@ b {
 }
 
 .tools {
-    margin-top: 1rem;
     display: grid;
     place-items: center;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap: 1rem;
+    padding-bottom: 1rem;
+    grid-auto-rows: 100%;
 }
 
 .tools > img {
