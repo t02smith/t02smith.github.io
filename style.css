@@ -102,3 +102,15 @@ b {
 .github:hover {
     color: #6e5494;
 }
+
+.tools {
+    margin-top: 1rem;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(5,1fr);
+    gap: 1rem;
+}
+
+.tools > img {
+    width: 48px;
+}
