@@ -167,9 +167,9 @@ b {
 /*ANIMATIONS*/
 
 @keyframes slideIn {
-    from {
-        -webkit-transform: translateX(-100%);
-    } to {
+    0% {
+        -webkit-transform: translateX(-350px);
+    } 100% {
         -webkit-transform: translateX(0);
     }
 }
