@@ -20,7 +20,6 @@
 
 .content {
     position: relative;
-    max-width: 500px;
     width: 100%;
     min-height: 100vh;
     background: radial-gradient(circle at left top,rgba(255, 255, 255, 0.1), #232323);
@@ -32,30 +31,28 @@ a {
     color: white;
 }
 
-h1 {
-    padding-top: 5rem;
+.title {
     font-size: 4rem;
     line-height: 1.2;
-    padding-right: 1rem;
-    -webkit-animation: slideIn 700ms forwards;
-    animation: slideIn 700ms forwards;
+    
 }
 
-h1 > p {
+.title > * {
+    padding-left: 1rem;
+}
+
+.title > p {
     border-bottom: 1px white solid;
     width: fit-content;
     padding-right: 2rem;
-    padding-left: 1rem;
     background: -webkit-linear-gradient(276.22deg, #00EF43 -3.9%, #0066FF 110.8%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-b {
+.title > b {
     opacity: 0.8;
-    padding-left: 1rem;
-
     background: -webkit-linear-gradient(262.47deg, #0066FF -22.49%, #00EF43 112.92%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -64,19 +61,8 @@ b {
 }
 
 .info {
-    margin-top: 4rem;
-    text-align: center;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    gap: 3.5rem;
-}
-
-.info-section {
-    -webkit-animation: fadeIn 500ms 750ms forwards;
-    animation: fadeIn 500ms 750ms forwards;
-    opacity: 0;
 }
 
 .info-section > p:first-child,
@@ -101,9 +87,7 @@ b {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    -webkit-animation: fadeIn 500ms 1250ms forwards;
-    animation: fadeIn 500ms 1250ms forwards;
-    opacity: 0;
+    
 }
 
 .link {
@@ -117,12 +101,16 @@ b {
     text-decoration: underline;
 }
 
-.email {
+.email > i {
     color: greenyellow;
 }
 
-.github{
+.github > i{
     color: #6e5494;
+}
+
+.linkedin > i {
+    color: #0A66C2;
 }
 
 .tools {
@@ -134,20 +122,13 @@ b {
     padding-bottom: 1rem;
 }
 
-.tools > p {
-    -webkit-animation: fadeIn 400ms 1600ms forwards;
-    animation: fadeIn 400ms 1600ms forwards;
-    opacity: 0;
-}
 
 .tools > div {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    -webkit-animation: fadeIn 400ms forwards;
-    animation: fadeIn 400ms forwards;
-    opacity: 0;
+    
 }
 
 .tools img {
@@ -164,22 +145,3 @@ b {
     background-color: #151515;
 }
 
-/*ANIMATIONS*/
-
-@keyframes slideIn {
-    0% {
-        -webkit-transform: translateX(-350px);
-    } 100% {
-        -webkit-transform: translateX(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        -webkit-transform: translateY(-20px);
-    } to {
-        opacity: 1;
-        -webkit-transform: none;
-    }
-}
