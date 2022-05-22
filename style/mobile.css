@@ -54,6 +54,12 @@
         opacity: 0;
     }
 
+    .credit {
+        -webkit-animation: fadeIn 400ms 1600ms forwards;
+        animation: fadeIn 400ms 1600ms forwards;
+        opacity: 0;
+    }
+
     .tools > div {
         -webkit-animation: fadeIn 400ms forwards;
         animation: fadeIn 400ms forwards;
