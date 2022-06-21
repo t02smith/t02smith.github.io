@@ -1,7 +1,6 @@
 
 
 .tech-stack {
-    height: 120vh;
     width: 100vw;
     background-color: #202020;
     position: relative;
@@ -55,7 +54,7 @@
 }
 
 .tech-stack h2 {
-    color: white;
+    color: #00a2ff;
 }
 
 .tech-stack p {
