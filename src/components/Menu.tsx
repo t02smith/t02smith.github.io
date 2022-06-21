@@ -1,4 +1,5 @@
 import React from 'react'
+import "../style/Menu.css"
 
 type Props = {}
 

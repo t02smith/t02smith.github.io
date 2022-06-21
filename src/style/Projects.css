@@ -3,8 +3,127 @@
     height: 100vh;
     width: 100vw;
     background-color: #131313;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    position: relative;
+
 }
 
-.projects > h2 {
+.projects > h1 {
     color: white;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+    background-color: #00a2ff;
+    width: 100%;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.project-ls {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 0;
+}
+
+.project-card {
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: fit-content;
+    place-self: center;
+    cursor: pointer;
+    width: 90%;
+    max-width: 500px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #202020;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.project-card-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    position: relative;
+    width: 100%;
+}
+
+.project-card-header > div:first-child {
+    background-color: #242424;
+}
+
+.gitto .project-card-header img {
+    width: 80px;
+}
+
+.project-card-header > h2 {
+    background-color: #131313;
+    padding: 0.5rem 0;
+    font-size: min(120%, 50px);
+    width: 100%;
+    text-align: center;
+}
+
+.gitto .project-card-header > h2 {
+    color: #FF6B00;
+}
+
+.aad .project-card-header > h2 {
+    color:  #004CBE;
+}
+
+.aad .project-card-header img {
+    margin: 0 0.25rem;
+}
+
+.project-card > p {
+    color: rgba(255, 255, 255, 0.59);
+    padding: 0.5rem 0.5rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    position: absolute;
+    background-color: #202020;
+    top: 37px;
+    height: 50px;
+    width: 95%;
+    max-width: 500px;
+    z-index: 100;
+}
+
+.project-card > p > b {
+   color: white;
+   font-size: 0.8rem;
+}
+
+.project-card > img {
+    padding: 1rem;
+    background-color: white;
+    object-fit: cover;
+    width: 100%;
+}
+
+.open-project-card {
+    position: absolute;
+    background-color: white;
+    top: 40%;
+    backdrop-filter: blur(10px);
+    max-width: 80%;
+}
+
+.blur {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.1;
+    position: absolute;
+}
+
+/* cards */
+
+.project-card .gitto {
+    background-color: white;
 }
