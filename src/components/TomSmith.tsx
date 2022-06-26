@@ -33,8 +33,12 @@ const LetterPath = ({ d, strokeDash }: TLetterPath) => {
 }
 
 function TomSmith() {
+	const numOfBlocks = 2*Math.floor(window.screen.width/100);
+
+	console.log(numOfBlocks)
+
 	let falling_blocks: number[] = []
-	for (let i=0; i<19; i++) falling_blocks.push(i);
+	for (let i=0; i<numOfBlocks; i++) falling_blocks.push(i);
 
 	return (
 		<div className='tom-smith'>
@@ -52,8 +56,8 @@ function TomSmith() {
 				Full Stack Developer
 			</motion.p>
 			<div className='bg-wrapper'>
-				{falling_blocks.map(i => <FallingBlock xOffset={-900+100*i} fallDelay={0.3*i} key={i}/>)}
-				{falling_blocks.map(i => <FallingBlock xOffset={900-100*i} fallDelay={0.3*i} key={i}/>)}
+				{falling_blocks.map(i => <FallingBlock xOffset={(100*i)%window.screen.width} fallDelay={0.3*i} key={i}/>)}
+				{falling_blocks.map(i => <FallingBlock xOffset={window.screen.width-((100*i)%window.screen.width)} fallDelay={0.3*i} key={i}/>)}
 
 			</div>
 		</div>
