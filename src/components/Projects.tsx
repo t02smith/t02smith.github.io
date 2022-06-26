@@ -13,9 +13,6 @@ export type Project = {
   card?: React.ReactNode;
 }
 
-
-
-
 // Project Cards
 
 type TCard = {

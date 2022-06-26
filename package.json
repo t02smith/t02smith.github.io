@@ -28,7 +28,10 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "sass": "sass --watch src/style/scss:src/style/css"
+    "sass": "sass --watch src/style/scss:src/style/css",
+    "sass-compile": "sass src/style/scss:src/style/css",
+    "docker": "docker-compose -f docker-compose.dev.yml up",
+    "docker-down": "docker-compose -f docker-compose.dev.yml down"
   },
   "eslintConfig": {
     "extends": [

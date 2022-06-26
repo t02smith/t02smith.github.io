@@ -1,12 +1,65 @@
 
+@use "../util/index" as *;
 
 .tech-stack {
     width: 100vw;
-    background-color: #202020;
+    background-color: $bg-secondary;
     position: relative;
     overflow-x: hidden;
     overflow-y: hidden;
     padding-bottom: 2rem;
+
+    .frontend {
+        max-width: 64%;
+        margin: 1rem;
+        margin-top: 6rem;
+    }
+
+    .backend {
+        max-width: 62%;
+        margin-left: 130px;
+        margin-top: 130px;
+    }
+
+    .other {
+        max-width: 60%;
+        margin: 1rem;
+        margin-top: 8.5rem;
+    }
+
+    h2 {
+        color: #00a2ff;
+    }
+
+    p {
+        color: rgb(107, 107, 107);
+        font-style: italic;
+        margin-top: 0.5rem;
+
+        > b {
+            color: rgb(150,150,150);
+        
+        }
+    }
+
+    img {
+        position: absolute;
+
+        &:nth-child(1) {
+            right: -55%;
+            top: 30px;
+        }
+
+        &:nth-child(2) {
+            left: -55%;
+            top: 300px;
+        }
+
+        &:nth-child(3) {
+            right: -50%;
+            top: 600px;
+        }
+    }
     
 }
 
@@ -14,56 +67,4 @@
     .tech-stack {
         display: none;
     }
-}
-
-.tech-stack img {
-    position: absolute;
-}
-
-.tech-stack img:nth-child(1) {
-    right: -55%;
-    top: 30px;
-}
-
-.tech-stack img:nth-child(2) {
-    left: -55%;
-    top: 300px;
-}
-
-.tech-stack img:nth-child(3) {
-    right: -50%;
-    top: 600px;
-}
-
-.tech-stack .frontend {
-    max-width: 64%;
-    margin: 1rem;
-    margin-top: 6rem;
-}
-
-.tech-stack .backend {
-    max-width: 62%;
-    margin-left: 130px;
-    margin-top: 130px;
-}
-
-.tech-stack .other {
-    max-width: 60%;
-    margin: 1rem;
-    margin-top: 8.5rem;
-}
-
-.tech-stack h2 {
-    color: #00a2ff;
-}
-
-.tech-stack p {
-    color: rgb(107, 107, 107);
-    font-style: italic;
-    margin-top: 0.5rem;
-}
-
-.tech-stack p b {
-    color: rgb(150,150,150);
-
 }
