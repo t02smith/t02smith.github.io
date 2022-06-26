@@ -1,7 +1,7 @@
-import React from 'react'
-import "../style/TechStack.css"
-import { motion } from "framer-motion"
-
+import React, { useEffect } from 'react'
+import "../style/css/components/TechStack.css"
+import { motion, useAnimation } from "framer-motion"
+import { useInView } from 'react-intersection-observer'
 
 const RotatingWheel = ({ path }: { path: string }) => {
 	return <motion.img
@@ -18,20 +18,38 @@ interface ITextSection {
 }
 
 const TextSection = ({ title, className, children }: ITextSection) => {
+	const {ref, inView} = useInView();
+	const animation = useAnimation();
+
+	useEffect(() => {
+		if (inView)
+			animation.start({
+				y: 0,
+				opacity: 1,
+				transition: {duration: 1.5}
+			})
+	}, [inView])// eslint-disable-line
+
 	return (
-		<div className={className}>
+		<motion.div 
+			ref={ref} 
+			className={className}
+			initial={{opacity: 0, y: 50}}
+			animate={animation}
+		>
 			<h2>{title}</h2>
 			<p>
 				{children}
 			</p>
-		</div>
+		</motion.div>
 	)
 }
 
 
 function TechStack() {
+
 	return (
-		<div className='tech-stack'>
+		<motion.div className='tech-stack'>
 			<RotatingWheel path='frontend.svg' />
 			<RotatingWheel path='backend.svg' />
 			<RotatingWheel path='other.svg' />
@@ -52,7 +70,7 @@ function TechStack() {
 				from developing <b>CLIs</b> to <b>programming languages </b>
 				and <b>network attached storage</b> devices.
 			</TextSection>
-		</div>
+		</motion.div>
 	)
 }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import "../style/TomSmith.css"
+import "../style/css/components/TomSmith.css"
 import { motion } from "framer-motion"
 
 type TFallingBlock = {

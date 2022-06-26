@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { AnimatePresence, motion } from "framer-motion"
-import "../style/Projects.css"
+import "../style/css/components/Projects.css"
 
 
 
