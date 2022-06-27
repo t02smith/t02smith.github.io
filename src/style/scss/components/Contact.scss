@@ -1,0 +1,58 @@
+@use "../util/index" as *;
+
+.contact-wrapper {
+	height: fit-content;
+	background-color: $bg-primary;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+	position: relative;
+	padding: 5px;
+	padding-bottom: 1rem;
+
+	>h1 {
+		color: #00a2ff;
+		font-size: 2.5rem;
+		width: 100%;
+		text-align: center;
+		padding: 5px 0;
+		margin-bottom: 1rem;
+	}
+}
+
+.contact {
+	height: 100;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: $bg-secondary;
+	width: 100%;
+	gap: 1rem;
+	border-radius: 10px;
+	background-image: radial-gradient(circle at left top, rgba(0, 0, 0, 0.2), $bg-secondary);
+	padding: 1rem 0;
+
+	> div {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-size: 0.9rem;
+		cursor: pointer;
+		gap: 1rem;
+		
+	}
+}
+
+@media (min-width: $size-tablet) {
+	.contact-wrapper {
+		padding: 15px;
+	}
+
+	.contact {
+		max-width: 800px;
+	}
+}

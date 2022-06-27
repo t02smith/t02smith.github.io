@@ -14,9 +14,17 @@ My personal website built using React.js, TypeScript and Sass.
 # compile the stylesheets
 yarn run sass-compile
 
-# run website in container
+# To run the wesbite
+yarn start
+```
+
+You can also run a built version of the website in
+a docker container
+
+```bash
+# Run the container
 yarn run docker
 
-# OR run website
-yarn start
+# Close the container
+yarn run docker-down
 ```

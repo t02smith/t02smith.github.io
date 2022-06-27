@@ -1,7 +1,13 @@
 @use "../util/index" as *;
 
+.tech-stack-wrapper {
+	background-color: $bg-primary;
+	padding: 5px;
+}
+
 .tech-stack {
-	width: 100vw;
+	border-radius: 10px;
+	width: 100%;
 	background-color: $bg-secondary;
 	overflow-x: hidden;
 	overflow-y: hidden;
@@ -9,6 +15,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-image: radial-gradient(circle at left top,rgba(0, 0, 0, 0.2), $bg-secondary);;
 
 	.front-end, .other, .back-end {
 		width: 100%;
@@ -18,7 +25,7 @@
 		place-items: center;
 		grid-template-columns: 1fr 1fr;
 
-		> div {
+		> div:first-child {
 			margin: 1rem;
 			min-width: 220px;	
 			max-width: 400px;	
@@ -49,34 +56,8 @@
 	}
 }
 
-// @media (min-width: $size-tablet) {
-// 	.tech-stack {
-
-// 		.frontend,
-// 		.backend,
-// 		.other {
-// 			width: 250px;
-// 		}
-
-// 		.backend {}
-
-// 		img {
-// 			position: absolute;
-
-// 			&:nth-child(1) {
-// 				right: 1rem;
-// 				top: 30px;
-// 			}
-
-// 			&:nth-child(2) {
-// 				left: 1rem;
-// 				top: 300px;
-// 			}
-
-// 			&:nth-child(3) {
-// 				right: 1rem;
-// 				top: 600px;
-// 			}
-// 		}
-// 	}
-// }
+@media (min-width: $size-tablet) {
+	.tech-stack-wrapper {
+		padding: 15px;
+	}
+}

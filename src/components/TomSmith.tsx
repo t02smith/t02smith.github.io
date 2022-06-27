@@ -2,11 +2,18 @@ import React from 'react'
 import "../style/css/components/TomSmith.css"
 import { motion } from "framer-motion"
 
+// Falling Blocks
+
 type TFallingBlock = {
-	xOffset: number;
-	fallDelay?: number
+	xOffset: number;	// Position along the x-axis
+	fallDelay?: number	// (OPTIONAL) delay before a block starts falling
 }
 
+/**
+ * Represents a single falling block 
+ * @param props see TFallingBlock above 
+ * @returns A single FallingBlock
+ */
 const FallingBlock = ({ xOffset, fallDelay = 0 }: TFallingBlock) => {
 	return (
 		<motion.div
@@ -18,11 +25,18 @@ const FallingBlock = ({ xOffset, fallDelay = 0 }: TFallingBlock) => {
 	)
 }
 
+// Title
+
 type TLetterPath = {
-	d: string;
-	strokeDash: number
+	d: string;			// defines the path to be drawn
+	strokeDash: number	// defines pattern of dashes and gaps in letters
 }
 
+/**
+ * Represents each letter in the title sequence
+ * @param props see TLetterPath above 
+ * @returns A single letter
+ */
 const LetterPath = ({ d, strokeDash }: TLetterPath) => {
 	return <motion.path 
 		animate={{strokeDasharray: strokeDash, strokeDashoffset: strokeDash}} 
@@ -32,10 +46,14 @@ const LetterPath = ({ d, strokeDash }: TLetterPath) => {
 
 }
 
+// TomSmith title page
+
+/**
+ * The title page with my name on it
+ * @returns The title page component
+ */
 function TomSmith() {
 	const numOfBlocks = 2*Math.floor(window.screen.width/100);
-
-	console.log(numOfBlocks)
 
 	let falling_blocks: number[] = []
 	for (let i=0; i<numOfBlocks; i++) falling_blocks.push(i);

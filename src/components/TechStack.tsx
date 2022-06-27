@@ -8,12 +8,33 @@ import { useInView } from 'react-intersection-observer'
  * @param path The name of the svg
  * @returns rotating svg component
  */
-const RotatingWheel = ({ path }: { path: string }) => {
-	return <motion.img
-		src={`${process.env.PUBLIC_URL}/svg/${path}`} alt=""
-		animate={{ rotate: [0, 360, 0] }}
-		transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-	/>
+const RotatingWheel = ({ path, left }: { path: string, left?: boolean }) => {
+	const { ref, inView } = useInView();
+	const animation = useAnimation();
+
+	useEffect(() => {
+		if (inView)
+			animation.start({
+				opacity: 1,
+				x: 0,
+				transition: { duration: 1.5 }
+			})
+	}, [inView])// eslint-disable-line
+
+	return <motion.div 
+			ref={ref} 
+			animate={animation}
+			className='rotating-wheel'
+			initial={{ opacity: 0, x: left ? -70:70 }}
+		>
+		<motion.img
+			src={`${process.env.PUBLIC_URL}/svg/${path}`} alt=""
+			animate={{ rotate: [0, 360, 0] }}
+			transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+		/>
+	</motion.div>
+
+
 }
 
 // props for TextSection
@@ -63,38 +84,41 @@ const TextSection = ({ title, children }: TTextSection) => {
 function TechStack() {
 
 	return (
-		<motion.div className='tech-stack'>
-			<div className="front-end">
-				<TextSection title='UI/UX Designer'>
-					I'm a junior <b>UI/UX designer</b> familiar with many widely
-					used front-end tools and languages. Such as <b>React.js </b>
-					(with both <b>JavaScript</b> and <b>TypeScript</b>) as well as
-					<b> Figma</b> for prototyping.
-				</TextSection>
-				<RotatingWheel path='frontend.svg' />
+		<div className="tech-stack-wrapper">
+			<div className='tech-stack'>
+				<div className="front-end">
+					<TextSection title='UI/UX Designer'>
+						I'm a junior <b>UI/UX designer</b> familiar with many widely
+						used front-end tools and languages. Such as <b>React.js </b>
+						(with both <b>JavaScript</b> and <b>TypeScript</b>) as well as
+						<b> Figma</b> for prototyping.
+					</TextSection>
+					<RotatingWheel path='frontend.svg' />
+				</div>
+
+				<div className="back-end">
+
+					<TextSection title="Backend Dev">
+						I have plenty of experience in backend development using
+						methods like <b>agile</b> and <b>test driven development</b> to product
+						applications that mange <b>SQL databases</b> and serve <b>RESTful APIs</b>.
+					</TextSection>
+					<RotatingWheel left path='backend.svg' />
+				</div>
+
+				<div className="other">
+					<TextSection title='Everything Else'>
+						I've also worked with plenty other tools and technologies
+						from developing <b>CLIs</b> to <b>programming languages </b>
+						and <b>network attached storage</b> devices.
+					</TextSection>
+					<RotatingWheel path='other.svg' />
+				</div>
+
+
 			</div>
+		</div>
 
-			<div className="back-end">
-				
-				<TextSection title="Backend Dev">
-					I have plenty of experience in backend development using
-					methods like <b>agile</b> and <b>test driven development</b> to product
-					applications that mange <b>SQL databases</b> and serve <b>RESTful APIs</b>.
-				</TextSection>
-				<RotatingWheel path='backend.svg' />
-			</div>
-
-			<div className="other">
-				<TextSection title='Everything Else'>
-					I've also worked with plenty other tools and technologies
-					from developing <b>CLIs</b> to <b>programming languages </b>
-					and <b>network attached storage</b> devices.
-				</TextSection>
-				<RotatingWheel path='other.svg' />
-			</div>
-
-
-		</motion.div>
 	)
 }
 
