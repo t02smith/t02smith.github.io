@@ -20,16 +20,17 @@ export type Project = {
  * @returns Project page component
  */
 const Projects = () => {
-  const [selected, setSelected] = useState<Project | null>(null); // eslint-disable-line
 
   return (
     <div className='projects-wrapper'>
       <h1>Projects</h1>
 
       <div className="projects">
-        <GittoCard setProject={setSelected} />
+        <GittoCard />
+        <AdAuctionCard2 />
+        {/* <GittoCard setProject={setSelected} />
         <AdAuctionCard setProject={setSelected} />
-        <UrlShortenerCard setProject={setSelected} />
+        <UrlShortenerCard setProject={setSelected} /> */}
       </div>
 
 
@@ -50,46 +51,6 @@ type TCard = {
   setProject(p: Project): void;
 }
 
-/**
- * A project card for Gitto
- * @param props see TCard above 
- * @returns GittoCard component
- */
-const GittoCard = ({ setProject }: TCard) => {
-  const gitto: Project = {
-    id: "0",
-    title: "Gitto",
-    icon: `${process.env.PUBLIC_URL}/svg/projects/gitto.svg`,
-    description: <>A <b>version control system</b> complete with a <b>CLI</b>, <b>website </b>
-      and <b>RESTful web server</b>.</>,
-    link: "https://github.com/t02smith",
-    card: <GittoCard setProject={setProject} />
-  }
-
-  return (
-    <motion.div
-      className="gitto project-card"
-      layoutId={gitto.id}
-      onClick={() => setProject(gitto)}
-      initial={{ scale: 0.2 }}
-      animate={{ scale: 1 }}
-    >
-      <div className='project-card-header'>
-        <div>
-          <motion.img
-            initial={{ x: 20, y: 40 }}
-            animate={{ x: [20, 20, 20, 110, 110, 110, 110, 20, 20], y: [10, 10, 40, 40, 10, 10, 40, 40, 10] }}
-            transition={{ duration: 9, repeat: Infinity }}
-            src={`${process.env.PUBLIC_URL}/svg/projects/gitto.svg`} alt="" />        </div>
-        <h2>{gitto.title}</h2>
-      </div>
-
-      <p>
-        {gitto.description}
-      </p>
-    </motion.div>
-  )
-}
 
 /**
  * A project card for Ad Auction Dashboard
@@ -200,5 +161,99 @@ const UrlShortenerCard = ({ setProject }: TCard) => {
   )
 }
 
+
+const GittoCard = () => {
+
+  return (
+    <motion.a
+      href='http://github.com/t02smith'
+      className="gitto project-card"
+      whileHover={{ scale: 1.02 }}
+    >
+      <div>
+        <motion.img
+          initial={{ x: 40, y: 70 }}
+          animate={{ x: [40, 40, 40, 150, 150, 150, 150, 40, 40], y: [20, 20, 70, 70, 20, 20, 70, 70, 20] }}
+          transition={{ duration: 9, repeat: Infinity }}
+          src={`${process.env.PUBLIC_URL}/svg/projects/gitto.svg`} alt="" />
+      </div>
+      <h2>Gitto</h2>
+      <p>
+        <b>Gitto</b> is a <b>version control system</b> complete with a <b>Command Line Interface</b>
+        , <b>website</b> and <b>RESTful API</b>. The aim of this application was to emulate <b>Git </b>
+        whilst including some <b>quality of life</b> changes to modernise it.
+      </p>
+      <div className="icons">
+        <img src={`${process.env.PUBLIC_URL}/svg/projects/tools/java.svg`} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/svg/projects/tools/spring.svg`} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/svg/projects/tools/postgres.svg`} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/svg/projects/tools/python.svg`} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/svg/projects/tools/typescript.svg`} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/svg/projects/tools/react.svg`} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/svg/projects/tools/sass.svg`} alt="" />
+        <img src={`${process.env.PUBLIC_URL}/svg/projects/tools/docker.svg`} alt="" />
+      </div>
+    </motion.a>
+  )
+}
+
+const AdAuctionCard2 = () => {
+  let random: number[] = []
+  for (let i = 0; i < 11; i++) random.push(Math.floor(Math.random() * (3)))
+
+  const barCharts: JSX.Element[] = random.map((r, i) => {
+    switch (r) {
+      case 0: // red
+        return (
+          <motion.img
+            initial={{ y: 20 }}
+            animate={{ y: [20, 0, 20] }}
+            transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
+            key={i}
+            src={`${process.env.PUBLIC_URL}/svg/projects/aad/red.svg`} alt="" />
+        )
+      case 1: // yellow
+        return (
+          <motion.img
+            initial={{ y: 30 }}
+            animate={{ y: [30, 0, 30] }}
+            transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
+            key={i}
+            src={`${process.env.PUBLIC_URL}/svg/projects/aad/yellow.svg`} alt="" />
+        )
+      case 2: // green
+        return (
+          <motion.img
+            initial={{ y: 50 }}
+            animate={{ y: [50, 10, 50] }}
+            transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
+            key={i}
+            src={`${process.env.PUBLIC_URL}/svg/projects/aad/green.svg`} alt="" />
+        )
+      default:
+        return <div></div>
+    }
+  })
+
+  return (
+    <motion.a
+      href=""
+      className="aad project-card"
+      whileHover={{ scale: 1.02 }}
+    >
+      <div>
+        {barCharts}
+      </div>
+      <h2>
+        Ad Auction Dashboard
+      </h2>
+      <p>
+        An <b>agile</b> based group software engineering project
+        that involved the <b>design</b>, <b>implementation</b> and <b>testing</b> of an application.
+      </p>
+
+    </motion.a>
+  )
+}
 
 export default Projects
