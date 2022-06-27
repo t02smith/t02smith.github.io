@@ -7,18 +7,18 @@ const Contact = () => {
         <h1>Contact Me</h1>
 
         <div className='contact'>
-            <div >
+            <a href="mailto:tom@t02smith.com">
                 <img src={`${process.env.PUBLIC_URL}/svg/contact/email.svg`} alt="" />
                 <h2>Send me an email</h2>
-            </div>
-            <div>
+            </a>
+            <a href="http://github.com/t02smith">
                 <img src={`${process.env.PUBLIC_URL}/svg/contact/github.svg`} alt="" />
                 <h2>Find me on GitHub</h2>
-            </div>
-            <div>
+            </a>
+            <a href="http://www.linkedin.com/in/tom-smith-uos">
                 <img src={`${process.env.PUBLIC_URL}/svg/contact/linkedin.svg`} alt="" />
                 <h2>Find me on Linkedin</h2>
-            </div>
+            </a>
 
         </div>
     </div>
