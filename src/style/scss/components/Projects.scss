@@ -68,168 +68,53 @@
     color: rgba(255, 255, 255, 0.8);
     background-color: #242424;
 
-    > b {
-      color: rgba(255,255,255,0.8);
+    >b {
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 
-  > .icons {
+  >.icons {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
     gap: 10px;
 
-    > img {
+    >img {
       width: 30px;
     }
   }
 
-  &.gitto > h2, &.gitto > p > b {
+  &.url {
+
+    >h2,
+    >p>b {
+      color: green;
+    }
+
+    .url-anim {
+      width: 10px;
+      height: 20px;
+      background-color: red;
+      border-radius: 4px;
+      animation: url-anim 3.5s infinite linear;
+      margin: 1rem 0;
+    }
+  }
+
+
+  &.gitto>h2,
+  &.gitto>p>b {
     color: #ff6b00;
   }
 
-  &.aad > h2, &.aad > p > b {
+  &.aad>h2,
+  &.aad>p>b {
     color: #0665f5;
   }
+
 }
 
-// .project-card {
-//   border-radius: 6px;
-//   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-//   width: fit-content;
-//   place-self: center;
-//   cursor: pointer;
-//   width: 90%;
-//   max-width: 325px;
-//   height: 100px;
-//   display: flex;
-//   flex-direction: column;
-//   overflow: hidden;
-//   background-color: #202020;
-//   position: relative;
-//   margin-top: 1rem;
-
-//   >.project-card-header {
-//     display: grid;
-//     grid-template-columns: 3fr 1fr;
-//     position: relative;
-//     width: 100%;
-
-//     >div:first-child {
-//       background-color: #242424;
-//     }
-
-//     >h2 {
-//       background-color: #131313;
-//       padding: 0.5rem 0;
-//       font-size: min(120%, 50px);
-//       width: 100%;
-//       text-align: center;
-//     }
-//   }
-
-//   &:last-child {
-//     margin-bottom: 1rem; 
-//   }
-
-//   >p {
-//     color: rgba(255, 255, 255, 0.59);
-//     padding: 0.5rem 0.5rem;
-//     font-size: 0.9rem;
-//     font-style: italic;
-//     position: absolute;
-//     background-color: #202020;
-//     top: 37px;
-//     height: 50px;
-//     width: 95%;
-//     max-width: 500px;
-//     z-index: 100;
-
-//     >b {
-//       color: white;
-//       font-size: 0.8rem;
-//     }
-
-//     >a {
-//       text-decoration: none;
-//       color: rgb(97, 97, 244);
-
-//       &:hover {text-decoration: underline;}
-//     }
-//   }
-
-//   >img {
-//     padding: 1rem;
-//     background-color: white;
-//     object-fit: cover;
-//     width: 100%;
-//   }
-
-
-//   // custom cards
-
-//   &.gitto>.project-card-header {
-
-//     img {
-//       width: 80px;
-//     }
-
-//     >h2 {
-//       color: #ff6b00;
-//     }
-
-//   }
-
-//   &.aad>.project-card-header {
-
-//     img {
-//       margin: 0 0.25rem;
-//     }
-
-//     >h2 {
-//       color: #004cbe;
-//     }
-//   }
-
-//   &.url-shorten>.project-card-header {
-
-//     >div {
-//       display: flex;
-//       align-items: center;
-//       overflow-x: hidden;
-//     }
-
-//     .url-animation {
-//       width: 10px;
-//       height: 20px;
-//       background-color: red;
-//       border-radius: 4px;
-//       animation: url-anim 3.5s infinite linear;
-//     }
-
-//     >h2 {
-//       color: green;
-//     }
-//   }
-// }
-
-
-.open-project-card {
-  position: absolute;
-  background-color: white;
-  top: 40%;
-  backdrop-filter: blur(10px);
-  max-width: 80%;
-}
-
-.blur {
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  opacity: 0.1;
-  position: absolute;
-}
 
 
 // animations

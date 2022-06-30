@@ -76,7 +76,6 @@ function TomSmith() {
 			<div className='bg-wrapper'>
 				{falling_blocks.map(i => <FallingBlock xOffset={(100*i)%window.screen.width} fallDelay={0.3*i} key={i}/>)}
 				{falling_blocks.map(i => <FallingBlock xOffset={window.screen.width-((100*i)%window.screen.width)} fallDelay={0.3*i} key={i}/>)}
-
 			</div>
 		</div>
 	)

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from "framer-motion"
 import "../style/css/components/Projects.css"
 
@@ -15,137 +15,19 @@ const Projects = () => {
   return (
     <div className='projects-wrapper'>
       <h1>Projects</h1>
-
       <div className="projects">
         <GittoCard />
-        <AdAuctionCard2 />
-        {/* <GittoCard setProject={setSelected} />
-        <AdAuctionCard setProject={setSelected} />
-        <UrlShortenerCard setProject={setSelected} /> */}
+        <AdAuctionCard />
+        <UrlShortenerCard />
       </div>
-
-
-      {/* <div className={`${selected && "blur"}`} onClick={() => setSelected(null)}></div> */}
-      {/* <AnimatePresence>
-        {
-          selected?.card
-        }
-      </AnimatePresence> */}
     </div>
   )
 }
 
+export default Projects;
+
 // Project Cards
 
-
-// /**
-//  * A project card for Ad Auction Dashboard
-//  * @param props see TCard above 
-//  * @returns the project card for Ad Auction Dashboard
-//  */
-// const AdAuctionCard = ({ setProject }: TCard) => {
-//   const aad: Project = {
-//     id: "1",
-//     title: "AAD",
-//     description: <>An <b>agile</b> based group software engineering project
-//       that involved the <b>design</b>, <b>implementation</b> and <b>testing</b> of an application.</>,
-//     icon: "",
-//     card: <AdAuctionCard setProject={setProject} />
-//   }
-
-//   let random: number[] = []
-//   for (let i = 0; i < 11; i++) random.push(Math.floor(Math.random() * (3)))
-
-//   const barCharts: JSX.Element[] = random.map((r, i) => {
-//     switch (r) {
-//       case 0: // red
-//         return (
-//           <motion.img
-//             initial={{ y: 20 }}
-//             animate={{ y: [20, 0, 20] }}
-//             transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
-//             key={i}
-//             src={`${process.env.PUBLIC_URL}/svg/projects/aad/red.svg`} alt="" />
-//         )
-//       case 1: // yellow
-//         return (
-//           <motion.img
-//             initial={{ y: 30 }}
-//             animate={{ y: [30, 0, 30] }}
-//             transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
-//             key={i}
-//             src={`${process.env.PUBLIC_URL}/svg/projects/aad/yellow.svg`} alt="" />
-//         )
-//       case 2: // green
-//         return (
-//           <motion.img
-//             initial={{ y: 50 }}
-//             animate={{ y: [50, 10, 50] }}
-//             transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
-//             key={i}
-//             src={`${process.env.PUBLIC_URL}/svg/projects/aad/green.svg`} alt="" />
-//         )
-//       default:
-//         return <div></div>
-//     }
-//   })
-
-//   return (
-//     <motion.div
-//       className="aad project-card"
-//       layoutId={aad.id}
-//       onClick={() => setProject(aad)}
-//       initial={{ scale: 0.2 }}
-//       animate={{ scale: 1 }}
-//     >
-//       <div className='project-card-header'>
-//         <div>
-//           {barCharts}
-//         </div>
-//         <h2>{aad.title}</h2>
-//       </div>
-
-//       <p>
-//         {aad.description}
-//       </p>
-
-//     </motion.div>
-//   )
-// }
-
-// const UrlShortenerCard = ({ setProject }: TCard) => {
-//   const p: Project = {
-//     id: "2",
-//     title: "URL",
-//     description: <>
-//       A <b>URL shortener</b> written in <b>Go</b> with <b>SQLite</b> that
-//       is active at <a href="http://link.t02smith.com">link.t02smith.com</a>
-//     </>,
-//     icon: `${process.env.PUBLIC_URL}/svg/projects/url.svg`,
-//     card: <UrlShortenerCard setProject={setProject} />
-//   }
-
-//   return (
-//     <motion.div
-//       layoutId={p.id}
-//       onClick={() => setProject(p)}
-//       initial={{ scale: 0.2 }}
-//       animate={{ scale: 1 }}
-//       className='url-shorten project-card'
-//     >
-//       <div className='project-card-header'>
-//         <div>
-//           <div className='url-animation'></div>
-//         </div>
-//         <h2>{p.title}</h2>
-//       </div>
-
-//       <p>
-//         {p.description}
-//       </p>
-//     </motion.div>
-//   )
-// }
 
 export type TProject = {
   animation: React.ReactNode;
@@ -178,6 +60,8 @@ export const ProjectCard = ({ animation, className, title, content, icons }: TPr
   )
 }
 
+// GITTO
+
 const GittoCard = () => {
   return (
     <ProjectCard
@@ -203,63 +87,87 @@ const GittoCard = () => {
   )
 }
 
-const AdAuctionCard2 = () => {
-  let random: number[] = []
-  for (let i = 0; i < 11; i++) random.push(Math.floor(Math.random() * (3)))
+// AD AUCTION DASHBOARD
 
-  const barCharts: JSX.Element[] = random.map((r, i) => {
-    switch (r) {
-      case 0: // red
-        return (
-          <motion.img
-            initial={{ y: 20 }}
-            animate={{ y: [20, 0, 20] }}
-            transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
-            key={i}
-            src={`${process.env.PUBLIC_URL}/svg/projects/aad/red.svg`} alt="" />
-        )
-      case 1: // yellow
-        return (
-          <motion.img
-            initial={{ y: 30 }}
-            animate={{ y: [30, 0, 30] }}
-            transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
-            key={i}
-            src={`${process.env.PUBLIC_URL}/svg/projects/aad/yellow.svg`} alt="" />
-        )
-      case 2: // green
-        return (
-          <motion.img
-            initial={{ y: 50 }}
-            animate={{ y: [50, 10, 50] }}
-            transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
-            key={i}
-            src={`${process.env.PUBLIC_URL}/svg/projects/aad/green.svg`} alt="" />
-        )
-      default:
-        return <div></div>
-    }
-  })
+const AdAuctionAnimation = () => {
+  let random: number[] = []
+  for (let i = 0; i < 21; i++)
+    random.push(Math.floor(Math.random() * (3)))
 
   return (
-    <motion.a
-      href=""
-      className="aad project-card"
-      whileHover={{ scale: 1.02 }}
-    >
-      <div>
-        {barCharts}
-      </div>
-      <h2>
-        Ad Auction Dashboard
-      </h2>
-      <p>
-        An <b>agile</b> based group software engineering project
-        that involved the <b>design</b>, <b>implementation</b> and <b>testing</b> of an application.
-      </p>
-
-    </motion.a>
+    <>
+      {random.map((r, i) => {
+        switch (r) {
+          case 0: // red
+            return (
+              <motion.img
+                initial={{ y: 30 }}
+                animate={{ y: [30, 10, 30] }}
+                transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
+                key={i}
+                src={`${process.env.PUBLIC_URL}/svg/projects/aad/red.svg`} alt="" />
+            )
+          case 1: // yellow
+            return (
+              <motion.img
+                initial={{ y: 40 }}
+                animate={{ y: [40, 10, 40] }}
+                transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
+                key={i}
+                src={`${process.env.PUBLIC_URL}/svg/projects/aad/yellow.svg`} alt="" />
+            )
+          case 2: // green
+            return (
+              <motion.img
+                initial={{ y: 60 }}
+                animate={{ y: [60, 10, 60] }}
+                transition={{ duration: 4, delay: i * 0.3, repeat: Infinity }}
+                key={i}
+                src={`${process.env.PUBLIC_URL}/svg/projects/aad/green.svg`} alt="" />
+            )
+          default:
+            return <div></div>
+        }
+      }
+      )}
+    </>
   )
 }
 
-export default Projects
+
+const AdAuctionCard = () => {
+
+  return (
+    <ProjectCard 
+      animation={<AdAuctionAnimation />}
+      className="aad"
+      title="Ad Auction Dashboard"
+      content={<>
+        <b>Ad Auction Dashboard</b> was an <b>agile</b> group project based around <b>designing</b>, <b>implementing</b>
+        and <b>testing</b> an application with constant communication with a customer. The application would interpret
+        large amounts of data about ad campaigns and provide key metrics for the customer to determine the success of
+        their campaign.
+      </>}
+      icons={["java.svg", "latex.svg"]}
+    />
+  )
+}
+
+// URL SHORTENER
+
+const UrlShortenerCard = () => {
+  return (
+    <ProjectCard 
+      animation={<div className='url-anim' />}
+      className="url"
+      title="URL Shortener"
+      content={<>
+        <b>URL Shortener</b> shortens URLs and provides temporary URLs
+        that will redirect a user to the original address. The application uses
+        an <b>SQLite3</b> database to store mappings.
+      </>}
+      icons={["go.svg", "sqlite.svg"]}
+    />
+  )
+}
+
