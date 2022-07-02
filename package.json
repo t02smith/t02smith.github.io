@@ -17,7 +17,6 @@
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.3.3",
     "react-scripts": "5.0.1",
-    "styled-components": "^5.3.5",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
@@ -31,9 +30,7 @@
     "sass": "sass --watch src/style/scss:src/style/css",
     "sass-compile": "sass src/style/scss:src/style/css",
     "docker": "docker-compose -f docker-compose.yml up",
-    "docker-down": "docker-compose -f docker-compose.yml down",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "docker-down": "docker-compose -f docker-compose.yml down"
   },
   "eslintConfig": {
     "extends": [

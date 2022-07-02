@@ -24,8 +24,9 @@ const RotatingWheel = ({ path, left }: { path: string, left?: boolean }) => {
 	return <motion.div 
 			ref={ref} 
 			animate={animation}
-			className='rotating-wheel'
-			initial={{ opacity: 0, x: left ? -70:70 }}
+			initial={ window.screen.width < 950
+				? { opacity: 0, x: left ? -70:70 }
+				: { opacity: 1, x: 0}}
 		>
 		<motion.img
 			src={`${process.env.PUBLIC_URL}/svg/${path}`} alt=""
@@ -65,7 +66,9 @@ const TextSection = ({ title, children }: TTextSection) => {
 	return (
 		<motion.div
 			ref={ref}
-			initial={{ opacity: 0, y: 50 }}
+			initial={ window.screen.width < 950
+				? { opacity: 0, y: 50 }
+				: { opacity: 1, y: 0}}
 			animate={animation}
 		>
 			<h2>{title}</h2>
@@ -101,7 +104,7 @@ function TechStack() {
 					<TextSection title="Backend Dev">
 						I have plenty of experience in backend development using
 						methods like <b>agile</b> and <b>test driven development</b> to product
-						applications that mange <b>SQL databases</b> and serve <b>RESTful APIs</b>.
+						applications that mange <b>SQL databases</b> and serve <b>RESTful APIs</b>
 					</TextSection>
 					<RotatingWheel left path='backend.svg' />
 				</div>

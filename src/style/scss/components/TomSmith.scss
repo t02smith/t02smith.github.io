@@ -19,6 +19,7 @@
     overflow-x: hidden;
     
     svg {
+        
         position: absolute;
         z-index: 100;
         animation: fill-name 1s 3s forwards ease;
@@ -28,6 +29,7 @@
     }
 
     path {
+        stroke: $title-colour;
         animation: line-in 5s ease forwards;
     }
 
@@ -59,14 +61,14 @@
 
 @keyframes fill-name {
     from {fill: transparent}
-    to {fill: white}
+    to {fill: $title-colour}
 }
 
 .square {
     position: absolute;
     width: 50px;
     height: 50px;
-    background-color: #00a2ff;
+    background-color: $block-colour;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 5px;
 }

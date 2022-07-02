@@ -15,9 +15,12 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-image: radial-gradient(circle at left top,rgba(0, 0, 0, 0.2), $bg-secondary);;
+	background-image: radial-gradient(circle at left top, rgba(0, 0, 0, 0.2), $bg-secondary);
+	;
 
-	.front-end, .other, .back-end {
+	.front-end,
+	.other,
+	.back-end {
 		width: 100%;
 		max-width: 800px;
 		position: relative;
@@ -25,11 +28,11 @@
 		place-items: center;
 		grid-template-columns: 1fr 1fr;
 
-		> div:first-child {
+		>div:first-child {
 			margin: 1rem;
-			min-width: 220px;	
-			max-width: 400px;	
-			font-size: large;	
+			min-width: 220px;
+			max-width: 400px;
+			font-size: large;
 		}
 	}
 
@@ -60,4 +63,34 @@
 	.tech-stack-wrapper {
 		padding: 15px;
 	}
+}
+
+@media screen and (min-width: $size-desktop) {
+	.tech-stack {
+		flex-direction: row;
+		padding-top: 2rem;
+
+		.front-end,
+		.other,
+		.back-end {
+			grid-template-columns: 1fr;
+			gap: 1rem;
+			text-align: center;
+
+			>div:first-child {
+				grid-row: 2;
+
+			}
+
+			img {
+				height: 50%;
+				max-height: 400px;
+			}
+		}
+
+		.front-end {
+			margin-top: 0;
+		}
+	}
+
 }

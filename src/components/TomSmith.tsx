@@ -41,7 +41,6 @@ const LetterPath = ({ d, strokeDash }: TLetterPath) => {
 	return <motion.path 
 		animate={{strokeDasharray: strokeDash, strokeDashoffset: strokeDash}} 
 		d={d}
-		stroke="white" 
 		strokeWidth="3" />
 
 }
