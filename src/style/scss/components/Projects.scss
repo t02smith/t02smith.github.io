@@ -67,6 +67,7 @@
     padding: 0.5rem;
     color: rgba(255, 255, 255, 0.8);
     background-color: #242424;
+    min-height: 150px;
 
     >b {
       color: rgba(255, 255, 255, 0.8);
@@ -91,6 +92,8 @@
     >p>b {
       color: green;
     }
+
+    > div:first-child {overflow-x: hidden;}
 
     .url-anim {
       width: 10px;
@@ -137,24 +140,23 @@
   }
 
   100% {
-    transform: translateX(250px);
+    transform: translateX(350px);
     background-color: green;
     width: 50px;
   }
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: $size-desktop) {
   .projects-wrapper {
     padding: 15px;
   }
 
   .projects {
-    display: grid;
-    place-items: center;
     width: 100%;
-    max-width: 800px;
-    grid-template-columns: 1fr 1fr;
-
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-x: scroll;
+    scroll-snap-type: none;
   }
 
 }

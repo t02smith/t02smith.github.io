@@ -76,8 +76,9 @@ const GittoCard = () => {
       title='Gitto'
       content={
         <><b>Gitto</b> is a <b>version control system</b> complete with a <b>Command Line Interface</b>
-          , <b>website</b> and <b>RESTful API</b>. The aim of this application was to emulate <b>Git </b>
-          whilst including some <b>quality of life</b> changes to modernise it.</>
+          , <b>website</b> and <b>RESTful API</b>. The aim of this application is to build a beginner friendly
+          version control system and remove some of the shortcomings of Git by providing a simpler to understand
+          interface, whilst being just as useful.</>
       }
       icons={[
         "java.svg", "spring.svg", "postgres.svg", "python.svg", "typescript.svg",
@@ -164,9 +165,10 @@ const UrlShortenerCard = () => {
       content={<>
         <b>URL Shortener</b> shortens URLs and provides temporary URLs
         that will redirect a user to the original address. The application uses
-        an <b>SQLite3</b> database to store mappings.
+        an <b>SQLite3</b> database to store mappings and allows users to request
+        specific URLs. Docker is used to allow for easy hosting between devices.
       </>}
-      icons={["go.svg", "sqlite.svg"]}
+      icons={["go.svg", "sqlite.svg", "docker.svg"]}
     />
   )
 }

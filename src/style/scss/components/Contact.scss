@@ -22,7 +22,7 @@
 }
 
 .contact {
-	height: 100;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -45,6 +45,7 @@
 		font-size: 0.9rem;
 		cursor: pointer;
 		gap: 1rem;
+
 		
 	}
 }
@@ -55,6 +56,12 @@
 	}
 
 	.contact {
-		max-width: 800px;
+		flex-direction: row;
+
+		> a {
+			flex-direction: column;
+			gap: 5px;
+			text-align: center;
+		}
 	}
 }

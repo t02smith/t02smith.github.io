@@ -91,29 +91,26 @@ function TechStack() {
 			<div className='tech-stack'>
 				<div className="front-end">
 					<TextSection title='UI/UX Designer'>
-						I'm a junior <b>UI/UX designer</b> familiar with many widely
-						used front-end tools and languages. Such as <b>React.js </b>
-						(with both <b>JavaScript</b> and <b>TypeScript</b>) as well as
-						<b> Figma</b> for prototyping.
+						I <b>design</b>, <b>prototype</b> and <b>build</b> reactive user interfaces using
+						a variety of frontend tools. I primarily work with <b>websites</b> but have some experience
+						with <b>desktop</b> and <b>mobile applications</b>.
 					</TextSection>
 					<RotatingWheel path='frontend.svg' />
 				</div>
 
 				<div className="back-end">
-
 					<TextSection title="Backend Dev">
-						I have plenty of experience in backend development using
-						methods like <b>agile</b> and <b>test driven development</b> to product
-						applications that mange <b>SQL databases</b> and serve <b>RESTful APIs</b>
+						I use methods such as <b>agile</b> and <b>test driven development</b> to produce
+						applications that work with <b>SQL databases</b>, serve <b>REST</b> APIs, and more
 					</TextSection>
 					<RotatingWheel left path='backend.svg' />
 				</div>
 
 				<div className="other">
 					<TextSection title='Everything Else'>
-						I've also worked with plenty other tools and technologies
-						from developing <b>CLIs</b> to <b>programming languages </b>
-						and <b>network attached storage</b> devices.
+						I also work with a variety of other tools and techniques
+						from writing <b>CLIs</b> to <b>programming languages</b> and
+						<b>distributed storage systems</b>.
 					</TextSection>
 					<RotatingWheel path='other.svg' />
 				</div>
